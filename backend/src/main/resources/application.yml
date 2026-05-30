@@ -1,0 +1,54 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: campus-mart
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/campus_mart?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234567
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.campusmart.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+jwt:
+  secret: CampusMartSecretKey2026CampusMartSecretKey2026CampusMartSecretKey
+  expiration: 86400000
+
+app:
+  frontend-url: ${FRONTEND_URL:http://localhost:5173}
+  public-api-url: ${PUBLIC_API_URL:http://localhost:8080}
+  upload:
+    path: ../public/images/
+    base-url: /images/
+
+alipay:
+  app-id: 9021000150656831
+  private-key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCGclZwDXjq7TyrXBpCRFRiRLHePO7Xc7G3SXk52yTGkeArFYaNtqVSG/laFMwjt49/aOlFDQ0Evj4Ox/s8z7hqbDCahqXlxtm3B2tyuaA2T5oiqPtx40S6/QRFXjiXTqCOyfX7QSFPcWcYQIv4vFooCAo+m4xD9mLeuysBw03b1jZnP21lpVHZiA+PsCoYMmeGGIz0YL5rBzgUPtnVjJ9/2X5yHUhY1HR8MICy/0kZVsrzlvqJdbMizQQfjfrwUUh9dtVJiyczf42vLKjHpU7vE8b6Sb+rEiXyudff7NsV36oDdEIUGSHJD01mHJfUcPJOL4vjTS7VVBFuIlAnO4C5AgMBAAECggEAOVUKrS/hj3TpOT3GaNnQjjMzEk0zoKbScxGe42AjF5ZfXKAKR+ZKK3CIbbSOtPBy/ecUCoEdOxeRSSZYab8+qgtG0q52kjyw3M8KL9seiep6FSuwRgmfZom8x4P9Z/B8oUdYYPOOK911FC96QPC5FXcQP1B/iP/Je6efGFpbmlHnjCkH02/NLna32TjrRbEGxDk70BSs5oLySeCL/JuO7/C+BqHcyRQN5QTMQvqdupvCYfQ/bC+LxJVxIPwEDKGEqc56YJj9nL7Yvn6IbMwQwZk9RcEzmugyuvDtULIL7wNSwti30rvCKfHs7B7k/AhcAzOk5FS2gbI4a/9r3U4w/QKBgQDZ5CXqxSAzluqS2ksmEF7rZrofw1NYISOrAkaOJti+pgubEKNeLNxJ0zIcZauyzPEL02FhQM/iCysf2oSPe4LhlDHOmtFysD2u4PmyOD1/NhdkZX9cezIDF89B6/Q7ej/IOm2+SzluDLCWfHM0DVut6iTzaRrUtnNvErrj+MLxLwKBgQCd9guwCfwYJd8UmCXxeb+tIu6imhHL8AdcLxBvGn6uGUc3Hq5cuHX2v6ZSt24gelmEjuLg9VYF0TT2FRTzvrJEseUbpka+JHtRj6/2wjjHJH/HtbeWYeICFnz9pl8xjohCiJ/4K4PAw6t6aMLV+CauJjaU/ybBt/vGWHABx3kilwKBgQCuGSLG1J1nO0XQ8wUqs9f0BY/gQ0S73TbPtDDF8noq0yfgzcmLPRMDFfIrSH2Jj0Fm7o4XlB7GgaACgqp6rvij37JwX7nNBs8yhWZeJZvVolXMjWDXd0Q9vm+HP85VG9gM18rKSvbnXNJYW7X9OFMxwi2mJCwhHGtdq7yS3Th+VwKBgGHflShTV3ci6BFboI75j/FYJqJrckF5jSXqJ3Wf5gQ7t2uIwCLFTJpB721rKHpJNPQ0kJEwkkdydC1RrLTGYLC9xSaXpVelRR+pNy9e8k056U614nX0WlRO2M1Va8BJ/1WyT+Q2GiGzW6myBZ8MbfMTzFgPrFT1ibRBEc2Yag8rAoGBAKCkUpAFd2kTJBI7XKRbNzidDfiaWX0AGWHS28+hE4TY1l4551zH9HrmsWy5EF1n0hneXbijTRpvB6mkLSh8VDQMtfCOMJ0byUClLWfJ+qgLXoL1Yu1FGsn+G1ebC4/87Cd1Ei36Nx//8xpGEieFK7US2Z9Ng0gXUlTgX70hOzXM
+  alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyybsZshRXYXKKj+5Ca5SPE9qrUbLi3PTiWcHGmMHgROMeDwyc2uyrgDRP0SoO3PjqIWTbH5f1nuwP+qS8aDSEqA0ogP1T0Dh0k+PO+TxV/ILvRA4aCUd/348hi+0DbtF6lgXJMnawgfnr3kexBRncdN6F8bdz6GWkxwXe4cNYXA69kZCk05FDEqsJZh82pDtx1p96jC5D4g5EZfcQzcbHjBnNHr1Lv9lywh4ku2uguCEa6DSdMRZ/FRYy1RGe2HQR7/5VZnCFxMs89AmMIIBJGjGe6jzrxarVp0HQH5EDEI3YX//h0w4/Gij3GmeKrPEwmflWSlASYx4/wyS0JawiQIDAQAB
+  gateway-url: https://openapi-sandbox.dl.alipaydev.com/gateway.do
+  return-url: ${app.public-api-url}/api/alipay/return
+  notify-url: ${app.public-api-url}/api/alipay/notify
+
+chatbot:
+  api-key: ${CHATBOT_API_KEY:sk-co7r8mnnjxw4jiplc52ugbvzvka4caauco187sr5o4kwq82u}
+  base-url: ${CHATBOT_BASE_URL:https://api.xiaomimimo.com/anthropic}
+  model: ${CHATBOT_MODEL:mimo-v2.5}

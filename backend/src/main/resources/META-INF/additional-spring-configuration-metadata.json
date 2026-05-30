@@ -1,0 +1,49 @@
+{
+  "properties": [
+    {
+      "name": "app.upload.path",
+      "type": "java.lang.String",
+      "description": "Filesystem path where uploaded images are stored."
+    },
+    {
+      "name": "app.upload.base-url",
+      "type": "java.lang.String",
+      "description": "Base URL path used to serve uploaded images."
+    },
+    {
+      "name": "alipay.app-id",
+      "type": "java.lang.String",
+      "description": "Alipay application ID."
+    },
+    {
+      "name": "alipay.private-key",
+      "type": "java.lang.String",
+      "description": "Alipay application private key."
+    },
+    {
+      "name": "alipay.private-key-path",
+      "type": "java.lang.String",
+      "description": "Classpath location of the Alipay private key file."
+    },
+    {
+      "name": "alipay.alipay-public-key",
+      "type": "java.lang.String",
+      "description": "Alipay public key."
+    },
+    {
+      "name": "alipay.gateway-url",
+      "type": "java.lang.String",
+      "description": "Alipay gateway URL."
+    },
+    {
+      "name": "alipay.return-url",
+      "type": "java.lang.String",
+      "description": "Alipay synchronous return URL."
+    },
+    {
+      "name": "alipay.notify-url",
+      "type": "java.lang.String",
+      "description": "Alipay asynchronous notification URL."
+    }
+  ]
+}
